@@ -55,6 +55,12 @@ AULA0202BOBJS = aula0201b.o aula0202.o
 AULA0202COBJS = aula0201c.o aula0202.o
 AULA0202DOBJS = aula0201d.o aula0202.o
 # -- Roteiro 2 /\ ---------------------------------------------------------------------------------
+
+# -- Roteiro 3 \/ ---------------------------------------------------------------------------------
+AULA03 = aula0302a
+AULA0302AOBJS = aula0301a.o aula0302.o
+
+# -- Roteiro 3 /\ ---------------------------------------------------------------------------------
 # /\ OBJS MACROS/\ --------------------------------------------------------------------------------
 
 
@@ -74,10 +80,16 @@ EXECS = aula0101\
 		aula0202a\
 		aula0202b\
 		aula0202c\
-		aula0202d
+		aula0202d\
+		aula0302a
 
 
-LIBS =
+LIBS =	libmatematicarecursao.a\
+	libmatematicadowhile.a\
+	libmatematicafor.a\
+	libmatematicawhile.a\
+	libmonitor.a\
+	libbase.a
 
 ALL = $(EXECS) $(LIBS)
 
@@ -136,6 +148,15 @@ libmatematicawhile.a: $(LIBMATEMATICAWHILEOBJS)
 	ar -r -c $@ $(LIBMATEMATICAWHILEOBJS)
 # -- Roteiro 2 /\ ---------------------------------------------------------------------------------
 
+
+# -- Roteiro 3 \/ ----------------------------------------------------------------------------------
+aula03: $(AULA03)
+
+aula0302a: $(AULA0302AOBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0302AOBJS)
+	cp -f $@ $@-$(OS)-$(CC)-$(DIALETO)
+
+# -- Roteiro 3 /\ ---------------------------------------------------------------------------------
 
 
 .PHONY: clean clean-all clean-objs clean-freebsd clean-linux clean-gcc clean-clang clean-ansi clean-c89 clean-c90 clean-c99 clean-c11
