@@ -60,6 +60,7 @@ AULA0202DOBJS = aula0201d.o aula0202.o
 AULA03 = aula0302a
 AULA0302AOBJS = aula0301a.o aula0302.o
 AULA0302BOBJS = aula0301b.o aula0302.o
+AULA0302COBJS = aula0301c.o aula0302.o
 
 # -- Roteiro 3 /\ ---------------------------------------------------------------------------------
 # /\ OBJS MACROS/\ --------------------------------------------------------------------------------
@@ -68,7 +69,7 @@ AULA0302BOBJS = aula0301b.o aula0302.o
 # \/ LIBS MACROS\/ --------------------------------------------------------------------------------
 # -- Roteiro 2 \/ ---------------------------------------------------------------------------------
 LIBMATEMATICARECURSAOOBJS = aula0201a.o aula0301a.o
-LIBMATEMATICADOWHILEOBJS = aula0201b.o
+LIBMATEMATICADOWHILEOBJS = aula0201b.o aula0301b.o
 LIBMATEMATICAFOROBJS = aula0201c.o
 LIBMATEMATICAWHILEOBJS = aula0201d.o
 # -- Roteiro 2 /\ ---------------------------------------------------------------------------------
@@ -83,7 +84,8 @@ EXECS = aula0101\
 		aula0202c\
 		aula0202d\
 		aula0302a\
-		aula0302b
+		aula0302b\
+		aula0302c
 
 
 LIBS =	libmatematicarecursao.a\
@@ -160,6 +162,10 @@ aula0302a: $(AULA0302AOBJS)
 
 aula0302b: $(AULA0302BOBJS)
 	$(LD) $(LFLAGS) -o $@ $(AULA0302BOBJS)
+	cp -f $@ $@-$(OS)-$(CC)-$(DIALETO)
+
+aula0302c: $(AULA0302COBJS)
+	$(LD) $(LFLAGS) -o $@ $(AULA0302COBJS)
 	cp -f $@ $@-$(OS)-$(CC)-$(DIALETO)
 
 # -- Roteiro 3 /\ ---------------------------------------------------------------------------------
