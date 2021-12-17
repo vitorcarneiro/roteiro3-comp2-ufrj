@@ -79,7 +79,7 @@ AULA0302DOBJS = aula0301d.o aula0302.o
 LIBMATEMATICARECURSAOOBJS = aula0201a.o aula0301a.o
 LIBMATEMATICADOWHILEOBJS = aula0201b.o aula0301b.o
 LIBMATEMATICAFOROBJS = aula0201c.o aula0301c.o
-LIBMATEMATICAWHILEOBJS = aula0201d.o
+LIBMATEMATICAWHILEOBJS = aula0201d.o aula0301d.o
 # ---- Roteiro 3 /\ -------------------------------------------------------------------------------
 # -- Roteiro 2 /\ ---------------------------------------------------------------------------------
 # /\ LIBS MACROS/\ --------------------------------------------------------------------------------
